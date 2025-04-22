@@ -1,0 +1,40 @@
+# ------------------
+# Node.js backend
+# ------------------
+node_modules/
+build/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------------
+# Angular frontend
+# ------------------
+**/node_modules/
+**/dist/
+**/.angular/
+.angular/cache/
+.angular/config.json
+
+
+# ------------------
+# OS & IDE files
+# ------------------
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# ------------------
+# Others
+# ------------------
+coverage/
+tmp/
+temp/
+.cache/
