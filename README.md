@@ -122,10 +122,12 @@ Clean and responsive UI with Angular
 Fully containerized using Docker
 
 ### Challenges & Resolutions
-### Challenges         ### Solutions
-Learning Angular       Followed official Angular documentation and tutorials 
-Structuring Gemini     responses Created consistent JSON format and validation mechanism 
-Dockerizing Angular    Used multi-stage builds to optimize production container
+
+Learning Angular - Followed official Angular documentation and tutorials 
+
+Structuring Gemini - responses Created consistent JSON format and validation mechanism 
+
+Dockerizing Angular - Used multi-stage builds to optimize production container
 
 ### Acknowledgements
 Google Gemini API
