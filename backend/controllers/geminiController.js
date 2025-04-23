@@ -19,7 +19,6 @@ exports.interpretDate = async (req, res) => {
     const result = await model.generateContent(prompt);
     const response = processGeminiResponse(await result.response.text());
 
-    //to save in db
     await saveToDatabase(query, response);
     res.json(response);
   } catch (error) {
@@ -61,11 +60,23 @@ function processGeminiResponse(text) {
 
 //save query and response
 async function saveToDatabase(request, response) {
-  await Query.create({
-    request,
-    response: response.date || null,
-    type: response.date ? "date" : "product",
-  });
+  const type = response.date ? "date" : "product";
+
+  // For date interpretations
+  if (type === "date") {
+    await Query.create({
+      request,
+      response: response.date, //  passing date string 
+      type,
+    });
+  } else {
+    // For product descriptions
+    await Query.create({
+      request,
+      response, // Full response object
+      type,
+    });
+  }
 }
 
 //error handling
