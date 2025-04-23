@@ -19,6 +19,7 @@ exports.interpretDate = async (req, res) => {
     const result = await model.generateContent(prompt);
     const response = processGeminiResponse(await result.response.text());
 
+    //to save in db
     await saveToDatabase(query, response);
     res.json(response);
   } catch (error) {

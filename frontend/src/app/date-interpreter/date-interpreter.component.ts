@@ -16,6 +16,7 @@ import { DatePipe, JsonPipe } from '@angular/common';
           <h3>Date Interpreter</h3>
         </div>
         <div class="card-body">
+        
           <form (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label class="form-label">Enter date phrase:</label>
@@ -27,6 +28,7 @@ import { DatePipe, JsonPipe } from '@angular/common';
                 placeholder="e.g., 'next Monday' or '3 days from today'"
               />
             </div>
+
             <button
               type="submit"
               class="btn btn-sm btn-outline-primary mb-2"
@@ -34,6 +36,7 @@ import { DatePipe, JsonPipe } from '@angular/common';
             >
               Interpret Date
             </button>
+
           </form>
 
           @if (error) {
@@ -47,6 +50,7 @@ import { DatePipe, JsonPipe } from '@angular/common';
               <div class="card-header">
                 {{ result.request }}
               </div>
+
               <div class="card-body">
                 <p><strong>Computed Date:</strong> {{ result.date | date }}</p>
                 <pre>{{ result | json }}</pre>
@@ -65,6 +69,7 @@ export class DateInterpreterComponent {
   error: string | null = null;
   isLoading = false;
 
+  //make api calls
   constructor(private api: ApiService) {}
 
   onSubmit() {
